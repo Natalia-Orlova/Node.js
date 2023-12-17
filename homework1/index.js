@@ -7,26 +7,30 @@
 // — * На каждой странице реализуйте счетчик просмотров. Значение счетчика должно увеличиваться на единицу каждый раз, когда загружается страница.
 
 const http = require('http');
+let countVisitsMain = 0;
+let countVisitsAbout = 0;
 const server = http.createServer((req, res) => {
     console.log('Запрос получен');
     switch (req.url) {
         case '/':
             res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'});
             res.end(`
-            <h1>Добро пожаловать</h1>
-            <a href='/about'>Обо мне</a>`);
+            <h1>Корневая страница</h1>
+            <a href='/about'>Старица About</a>
+            <p>Просмотров: ${++countVisitsMain}</p>`);
             break;
         case '/about':
             res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'});
             res.end(`
-            <h1>Добро пожаловать на страницу обо мне</h1>
-            <a href='/'>Главная</a>`);
+            <h1>Старница About</h1>
+            <a href='/'>Корневой каталог</a>
+            <p>Просмотров: ${++countVisitsAbout}</p>`);
             break;
         default:
             res.writeHead(404, {'Content-Type': 'text/html; charset=UTF-8'});
             res.end(`
             <h1>Ошибка 404</h1>
-            <a href='/'>Вернуться на главную</a>`);
+            <a href='/'>Вернуться в корневой каталог</a>`);
             break;
     }
 });
