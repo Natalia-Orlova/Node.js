@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Harry",
+    "secondName": "Potter",
+    "age": 11,
+    "city": "London"
+  },
+  {
+    "id": 2,
+    "name": "Ronald",
+    "secondName": "Weasley",
+    "age": 11,
+    "city": "Ottery St Catchpole"
+  },
+  {
+    "id": 3,
+    "name": "Hermione",
+    "secondName": "Granger",
+    "age": 11,
+    "city": "London"
+  },
+  {
+    "id": 4,
+    "name": "Draco",
+    "secondName": "Malfoy",
+    "age": 11,
+    "city": "Wiltshire"
+  }
+]
